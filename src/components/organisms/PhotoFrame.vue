@@ -1,15 +1,28 @@
 <template>
-    <div>
-        <img src="/images/DSC_9878.jpg" alt="">
-    </div>
+    <img 
+        class="w-full h-full"
+        :src="`images/${imageName}`" 
+        :alt="imageName">
 </template>
 
 <script>
     export default {
-        name: "PhotoFrame"
+        props: {
+            /**
+             * @property {String} imageName
+             */
+            imageName: {
+                type: String,
+                required: true
+            },
+            /**
+             * @property {Boolean} withOverlay
+             */
+            withOverlay: {
+                type: Boolean,
+                default: false
+            }
+        }
     }
 </script>
 
-<style scoped>
-
-</style>

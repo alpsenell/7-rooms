@@ -13,7 +13,7 @@
     }
 </script>
 
-<style>
+<style scoped lang="scss">
     #homepage {
         height: 100vh;
         width: 100vw;
