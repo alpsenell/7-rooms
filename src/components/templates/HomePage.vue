@@ -1,7 +1,13 @@
 <template>
-    <div class="home-page">
-        <photo-frame image-name="DSC_9898.jpg"></photo-frame>
-        <photo-frame image-name="restaurant_main.jpeg"></photo-frame>
+    <div class="grid grid-cols-2">
+        <photo-frame
+            image-name="DSC_9898.jpg"
+            :text-config="roomsTextConfig">
+        </photo-frame>
+        <photo-frame
+            image-name="DSC_9927.jpg"
+            :text-config="restaurantTextConfig">
+        </photo-frame>
     </div>
 </template>
 
@@ -11,13 +17,21 @@
     export default {
         components: {
             PhotoFrame
+        },
+        
+        data () {
+            return {
+                roomsTextConfig: {
+                    text: '7 Rooms',
+                    size: 'text-4xl',
+                    withOverlay: true
+                },
+                restaurantTextConfig: {
+                    text: 'Restaurant',
+                    size: 'text-4xl',
+                    withOverlay: true
+                }
+            };
         }
     }
 </script>
-
-<style lang="scss" scoped>
-    .home-page {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-</style>

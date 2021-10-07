@@ -1,5 +1,7 @@
 <template>
-    <home-page id="homepage">
+    <home-page 
+        id="homepage"
+        class="w-screen h-screen overflow-hidden">
     </home-page>
 </template>
 
@@ -12,10 +14,3 @@
         }
     }
 </script>
-
-<style scoped lang="scss">
-    #homepage {
-        height: 100vh;
-        width: 100vw;
-    }
-</style>
