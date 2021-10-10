@@ -1,16 +1,16 @@
 <template>
-    <div class="relative">
+    <div class="relative group">
         <div
-            class="w-full h-full"
+            class="w-full h-full cursor-pointer"
             :class="{ 'with-overlay': textConfig.withOverlay }">
             <img
-                class="w-full h-full"
+                class="w-full h-full object-cover"
                 :src="`images/${imageName}`"
                 :alt="imageName">
         </div>
         <div
             v-if="withText"
-            class="absolute top-2/4	left-2/4 translate-center text-gray-50"
+            class="cursor-pointer absolute top-2/4 left-2/4 translate-center text-gray-50 group-hover:text-gray-900"
             :class="textConfig.size">
             {{ textConfig.text }}
         </div>
@@ -63,13 +63,13 @@
         }
         &:after {
             transition: all 0.5s ease;
-            content:'\A';
-            width:100%;
-            height:100%;
-            top:0;
-            left:0;
+            content: '\A';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
             background: rgba(0, 0, 0, 0.4);
-            position:absolute;
+            position: absolute;
             opacity: 1;
         }
     }

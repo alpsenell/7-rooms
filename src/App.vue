@@ -1,17 +1,10 @@
 <template>
     <div id="app">
-        <home-page></home-page>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import HomePage from "@/components/pages/HomePage";
-    
-    export default {
-      components: {
-        HomePage
-      }
-    }
 </script>
 
 <style>

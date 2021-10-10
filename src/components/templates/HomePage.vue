@@ -1,11 +1,13 @@
 <template>
-    <div class="grid grid-cols-2">
+    <div class="flex flex-col md:flex-row">
         <photo-frame
+            class="md:flex-1"
             image-name="DSC_9898.jpg"
             :text-config="roomsTextConfig">
         </photo-frame>
         <photo-frame
-            image-name="DSC_9927.jpg"
+            class="md:flex-1"
+            image-name="Cheesecake.jpg"
             :text-config="restaurantTextConfig">
         </photo-frame>
     </div>
