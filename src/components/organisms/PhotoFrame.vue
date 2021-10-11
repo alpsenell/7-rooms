@@ -1,5 +1,7 @@
 <template>
-    <div class="relative group">
+    <div 
+        class="relative group"
+        @click="$emit('click')">
         <div
             class="w-full h-full cursor-pointer"
             :class="{ 'with-overlay': textConfig.withOverlay }">

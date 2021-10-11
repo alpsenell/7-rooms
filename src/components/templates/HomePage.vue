@@ -3,17 +3,20 @@
         <photo-frame
             class="md:flex-1"
             image-name="DSC_9898.jpg"
-            :text-config="roomsTextConfig">
+            :text-config="textConfigs.roomsTextConfig"
+            @click="$emit('goToRooms')">
         </photo-frame>
         <photo-frame
             class="md:flex-1"
             image-name="Cheesecake.jpg"
-            :text-config="restaurantTextConfig">
+            :text-config="textConfigs.restaurantTextConfig"
+            @click="$emit('goToRestaurant')">
         </photo-frame>
     </div>
 </template>
 
 <script>
+    import { localize } from '@/helpers';
     import PhotoFrame from '@/components/organisms/PhotoFrame';
     
     export default {
@@ -21,19 +24,34 @@
             PhotoFrame
         },
         
-        data () {
-            return {
-                roomsTextConfig: {
-                    text: '7 Rooms',
-                    size: 'text-4xl',
-                    withOverlay: true
-                },
-                restaurantTextConfig: {
-                    text: 'Restaurant',
-                    size: 'text-4xl',
-                    withOverlay: true
-                }
-            };
+        props: {
+            /**
+             * @property {String} language
+             */
+            language: {
+                type: String,
+                required: true
+            }  
+        },
+        
+        computed: {
+            /**
+             * @return {object}
+             */
+            textConfigs () {
+                return {
+                    roomsTextConfig: {
+                        text: localize('ROOMS'),
+                        size: 'text-4xl',
+                        withOverlay: true
+                    },
+                    restaurantTextConfig: {
+                        text: 'Restaurant',
+                        size: 'text-4xl',
+                        withOverlay: true
+                    }
+                };
+            }
         }
     }
 </script>
