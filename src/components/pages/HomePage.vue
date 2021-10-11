@@ -1,7 +1,7 @@
 <template>
     <home-page 
         id="homepage"
-        class="w-screen h-screen overflow-hidden"
+        class="md:w-screen md:h-screen md:overflow-hidden"
         :language="language"
         @goToRestaurant="redirectUser('restaurantPage')"
         @goToRooms="redirectUser('roomPage')">

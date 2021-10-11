@@ -1,4 +1,6 @@
 {
   "HOMEPAGE": "Homepage",
-  "ROOMS": "Rooms" 
+  "ROOMS": "Rooms",
+  "GALLERY": "Gallery",
+  "RESERVATION": "Reservation"
 }

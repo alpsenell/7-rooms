@@ -4,7 +4,11 @@
 
 <script>
     export default {
-        name: "Rooms"
+        name: "Rooms",
+        
+        mounted() {
+            console.log('mounted')
+        }
     }
 </script>
 
