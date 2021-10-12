@@ -4,14 +4,14 @@
         @click="$emit('click')">
         <div
             class="w-full h-full cursor-pointer"
-            :class="{ 'with-overlay': textConfig.withOverlay }">
+            :class="{ 'with-overlay': withOverlay }">
             <img
                 class="w-full h-full object-cover"
                 :src="`images/${imageName}`"
                 :alt="imageName">
         </div>
         <div
-            v-if="withText"
+            v-if="hasTextConfig"
             class="cursor-pointer absolute top-2/4 left-2/4 translate-center text-gray-50 group-hover:text-gray-900"
             :class="textConfig.size">
             {{ textConfig.text }}
@@ -30,27 +30,27 @@
                 required: true
             },
             /**
-             * @property {Boolean} withOverlay
-             */
-            withOverlay: {
-                type: Boolean,
-                default: false
-            },
-            /**
              * @property {Object} textConfig
              */
             textConfig: {
                 type: Object,
-                default: () => {}
+                default: () => ({})
             }
         },
-        
+
         computed: {
             /**
              * @return {boolean}
              */
-            withText () {
+            hasTextConfig () {
                 return Object.keys(this.textConfig).length > 0;
+            },
+
+            /**
+             * @return {boolean}
+             */
+            withOverlay () {
+                return this.hasTextConfig && this.textConfig.withOverlay;
             }
         }
     }
