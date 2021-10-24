@@ -8,6 +8,7 @@
                 class="cursor-pointer transform hover:scale-125 duration-500"
                 :width="socialMedia.size"
                 :height="socialMedia.size"
+                :alt="socialMedia.name"
                 @click="$emit('click', socialMedia)"/>
         </div>
     </div>
