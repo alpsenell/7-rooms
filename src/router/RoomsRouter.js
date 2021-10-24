@@ -5,6 +5,12 @@ export default [
     { 
         path: '/rooms', 
         component: Header, 
-        children: [{ path: '', component: Rooms }] 
+        children: [
+            { 
+                path: '',
+                component: Rooms,
+                meta: { pageName: 'home' }
+            }
+        ]
     }
 ];

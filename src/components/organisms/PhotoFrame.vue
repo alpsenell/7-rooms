@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="relative group"
+        class="relative group h-full"
         @click="$emit('click')">
         <div
             class="w-full h-full cursor-pointer"
