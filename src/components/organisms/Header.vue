@@ -1,5 +1,5 @@
 <template>
-    <div class="px-16">
+    <div>
         <language-selection
             :languages="availableLanguages"
             :active-language-index="activeLanguageIndex"

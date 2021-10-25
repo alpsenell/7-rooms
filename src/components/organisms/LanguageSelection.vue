@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-white h-14">
+    <div class="bg-black h-14">
         <div class="max-w-screen-xl flex justify-between my-0 mx-auto items-center h-full">
             <div class="language-selection">
                 <span 
                     v-for="(language, index) in languages"
                     :key="language.value"
                     :class="getClassForLanguage(language, index)"
-                    class="text-black hover:text-red-400 cursor-pointer mr-6 duration-500"
+                    class="text-white hover:text-red-400 cursor-pointer mr-6"
                     @mouseenter="handleMouseEnter(language)"
                     @mouseleave="hoveredLanguage = ''"
                     @click="$emit('changeLanguage', language.value)">
