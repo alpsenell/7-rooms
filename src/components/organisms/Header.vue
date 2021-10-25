@@ -6,8 +6,12 @@
             @click="goToUrl"
             @changeLanguage="changeLanguage">
         </language-selection>
-        <header class="h-16 flex justify-between items-center">
-            <photo-frame image-name="logo.png"></photo-frame>
+        <header class="h-16 flex justify-between items-center sticky top-0 bg-white z-10 px-16">
+            <photo-frame
+                image-class="py-2"
+                image-name="logo.png"
+                @click="pushRouter('/')">
+            </photo-frame>
             <div class="menu flex gap-24 justify-evenly relative">
                 <h2
                     v-for="(config, index) in textConfigs"
@@ -101,6 +105,13 @@
                 if (url) {
                     window.open(url);
                 }
+            },
+
+            /**
+             * @param {string} path
+             */
+            pushRouter (path) {
+                this.$router.push({ path })
             },
 
             /**

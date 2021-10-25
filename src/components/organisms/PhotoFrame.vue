@@ -7,6 +7,7 @@
             :class="{ 'with-overlay': withOverlay }">
             <img
                 class="w-full h-full object-cover"
+                :class="imageClass"
                 :src="`images/${imageName}`"
                 :alt="imageName">
         </div>
@@ -35,7 +36,14 @@
             textConfig: {
                 type: Object,
                 default: () => ({})
-            }
+            },
+            /**
+             * @property {String} imageClass
+             */
+            imageClass: {
+                type: String,
+                default: ''
+            },
         },
 
         computed: {
